@@ -248,7 +248,12 @@ public class PanelAlmacenGeneral extends JPanel implements ITablaListener {
         JScrollPane scrollPane = new JScrollPane(tabla);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         scrollPane.getViewport().setBackground(Color.WHITE);
-        
+        scrollPane.getVerticalScrollBar().setUnitIncrement(40); // Velocidad del scroll
+        scrollPane.getVerticalScrollBar().setBackground(Color.WHITE);
+        scrollPane.getVerticalScrollBar().setForeground(Color.red);
+        scrollPane.getVerticalScrollBar().setPreferredSize(new Dimension (30, this.getWidth()));
+        SwingStyle.redondear(scrollPane.getVerticalScrollBar(), 10, Color.white);
+
         panelTabla = new JPanel(new BorderLayout());
         panelTabla.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(COLOR_BORDE),
